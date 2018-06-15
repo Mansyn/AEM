@@ -1,0 +1,100 @@
+.usaf-app-header {
+  background: #08131c linear-gradient(45deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0) 125px ,  rgba(255, 255, 255, 0.04) 125px, rgba(255, 255, 255, 0.04) 170px, rgba(255, 255, 255, 0) 170px, rgba(255, 255, 255, 0) 200px ,  rgba(255, 255, 255, 0.04) 200px, rgba(255, 255, 255, 0.04) 245px, rgba(255, 255, 255, 0) 245px, rgba(255, 255, 255, 0) 275px ,  rgba(255, 255, 255, 0.04) 275px, rgba(255, 255, 255, 0.04) 320px, rgba(255, 255, 255, 0) 320px, rgba(255, 255, 255, 0) 350px ,  rgba(255, 255, 255, 0.04) 350px, rgba(255, 255, 255, 0.04) 395px, rgba(255, 255, 255, 0) 395px, rgba(255, 255, 255, 0) 425px ,  rgba(255, 255, 255, 0.04) 425px, rgba(255, 255, 255, 0.04) 470px, rgba(255, 255, 255, 0) 470px, rgba(255, 255, 255, 0) 500px ,  rgba(255, 255, 255, 0.04) 500px, rgba(255, 255, 255, 0.04) 545px, rgba(255, 255, 255, 0) 545px, rgba(255, 255, 255, 0) 575px ,  rgba(255, 255, 255, 0.04) 575px, rgba(255, 255, 255, 0.04) 620px, rgba(255, 255, 255, 0) 620px, rgba(255, 255, 255, 0) 650px) no-repeat;
+  border-bottom: 0.0625rem solid #2c353d;
+  color: #ffffff;
+  height: 4.375rem;
+  line-height: 4.375rem;
+  vertical-align: middle;
+  width: 100%; }
+
+.usaf-app-header__logo {
+  height: 3.25rem;
+  margin: 0.5625rem 0.6875rem;
+  width: 3.625rem;
+  float: left; }
+
+.usaf-app-header__title {
+  font-style: italic;
+  float: left; }
+
+.usaf-app-header__navigation {
+  float: right;
+  list-style-type: none;
+  font-size: 0.875rem;
+  margin: 0 0.9375rem; }
+
+.usaf-app-header__navigation-item {
+  display: inline-block;
+  margin: 0 0.9375rem;
+  position: relative; }
+
+.usaf-app-header__navigation-link {
+  color: #ffffff;
+  text-decoration: none; }
+  .usaf-app-header__navigation-link:hover {
+    border-bottom: 0.0625rem solid #ffffff; }
+
+.usaf-app-header__navigation-link--selected {
+  border-bottom: 0.0625rem solid #ffffff; }
+
+.usaf-app-header__menu {
+  float: right;
+  height: 100%;
+  margin: 0 0.9375rem;
+  vertical-align: middle; }
+
+.usaf-app-header__menu-toggle {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px; }
+
+.usaf-app-header__menu-toggle-label:hover {
+  color: #0ebdf6; }
+
+.usaf-app-header__icon-menu-close {
+  display: none; }
+
+.usaf-app-header__icon-hamburger-menu {
+  display: inline-block;
+  cursor: pointer; }
+
+.usaf-app-header__menu-toggle:checked + label .usaf-app-header__icon-menu-close {
+  display: inline-block;
+  cursor: pointer; }
+
+.usaf-app-header__menu-toggle:checked + label .usaf-app-header__icon-hamburger-menu {
+  display: none; }
+
+.usaf-app-header__menu-toggle:checked ~ .usaf-app-header__panel {
+  transform: translateX(0); }
+
+.usaf-app-header__panel {
+  bottom: 0;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  top: 4.375rem;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  width: 14.1875rem; }
+
+.usaf-app-header__panel-list {
+  background-color: #172129;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative; }
+  .usaf-app-header__panel-list li {
+    background-color: #172129;
+    border-bottom: 0.0625rem solid #454d54;
+    display: block;
+    line-height: 100%;
+    padding: 1.875rem 1.5rem;
+    position: relative;
+    width: 100%; }

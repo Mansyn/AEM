@@ -1,0 +1,17 @@
+// ##################################################
+// Dropdown Menu component
+// ##################################################
+//Import global vars/mixins
+@import '../scss/variables';
+@import '../scss/utils';
+
+.usaf-dropdown-menu__trigger {
+  cursor: pointer;
+};
+
+.usaf-dropdown-menu__dropdown {
+  position: absolute;
+  background-color: $white;
+  border: calc-rem(1px) solid $light-gray;
+  box-shadow: calc-rem(1px 1px 10px 1px) $light-gray;
+};

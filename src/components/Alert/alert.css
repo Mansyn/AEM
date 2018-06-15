@@ -1,0 +1,14 @@
+.usaf-alert {
+  background-color: #fff8e5;
+  display: table;
+  padding: 0.75rem;
+  width: 100%; }
+  .usaf-alert .usaf-alert__content {
+    display: table-cell;
+    vertical-align: middle; }
+  .usaf-alert .usaf-alert__icon {
+    display: table-cell;
+    font-size: 1.3125rem;
+    padding-top: 0.3125rem;
+    vertical-align: top;
+    width: 1.625rem; }

@@ -1,0 +1,55 @@
+@charset "UTF-8";
+.usaf-collapsible-list {
+  max-height: 100%;
+  padding-bottom: 0.625rem;
+  margin-bottom: 0.9375rem;
+  background: linear-gradient(to right, #c5c8cb 25%, rgba(255, 255, 255, 0) 0%) bottom;
+  background-size: 0.25rem 0.0625rem;
+  background-repeat: repeat-x; }
+
+.usaf-collapsible-list__header {
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  color: #494949;
+  margin-bottom: 0.3125rem; }
+
+.usaf-collapsible-list__header-icon {
+  color: #72777d;
+  font-size: 0.625rem; }
+
+.usaf-collapsible-list__header-label {
+  padding-left: 0.3125rem;
+  color: inherit; }
+
+.usaf-collapsible-list__list-container {
+  transition: max-height 0.4s ease-in;
+  overflow: auto;
+  padding: 0; }
+
+.usaf-collapsible-list-item {
+  position: relative;
+  border: none;
+  background-color: transparent;
+  font-size: 0.8125rem;
+  display: inline-block;
+  width: 100%;
+  padding: 0.3125rem 1.25rem; }
+  .usaf-collapsible-list-item:hover {
+    background-color: #f1f1f1; }
+
+.usaf-collapsible-list-item--selected {
+  background-color: #f1f1f1; }
+
+.usaf-collapsible-list-item--selected::before {
+  content: "•";
+  position: absolute;
+  left: 0.3125rem;
+  width: 0.625rem; }
+
+.usaf-collapsible-list__list-container--open {
+  max-height: 50rem; }
+
+.usaf-collapsible-list__list-container--closed {
+  max-height: 0;
+  overflow: hidden; }

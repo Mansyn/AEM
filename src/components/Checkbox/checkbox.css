@@ -1,0 +1,159 @@
+.usaf-checkbox {
+  align-items: center;
+  display: inline-flex;
+  min-height: 1.25rem;
+  padding: 0 0.625rem 0 1.875rem;
+  position: relative; }
+
+.usaf-checkbox--block {
+  display: flex; }
+
+.usaf-checkbox__text {
+  font-size: 1.375rem; }
+
+.usaf-checkbox__input {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px; }
+
+.usaf-checkbox__icon {
+  display: block;
+  font-size: 1.25rem;
+  height: 1em;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1em; }
+
+.usaf-icon-checkbox__border {
+  fill: #000000;
+  transition: fill 0.3s ease-in-out; }
+
+.usaf-icon-checkbox__background {
+  fill: #ffffff;
+  transition: fill 0.3s ease-in-out; }
+
+.usaf-icon-checkbox__x {
+  fill: #ffffff;
+  transition: fill 0.3s ease-in-out; }
+
+.usaf-checkbox__input:checked + .usaf-checkbox__icon .usaf-icon-checkbox__x {
+  fill: #283b91; }
+
+.usaf-checkbox:hover .usaf-checkbox__icon .usaf-icon-checkbox__border {
+  fill: #aab7ee; }
+
+.usaf-checkbox:hover .usaf-checkbox__input:checked + .usaf-checkbox__icon .usaf-icon-checkbox__border {
+  fill: #000000; }
+
+.usaf-checkbox:hover .usaf-checkbox__input:checked + .usaf-checkbox__icon .usaf-icon-checkbox__x {
+  fill: #aab7ee; }
+
+.usaf-checkbox .usaf-checkbox__input:disabled + .usaf-checkbox__icon .usaf-icon-checkbox__border,
+.usaf-checkbox:hover .usaf-checkbox__input:disabled + .usaf-checkbox__icon .usaf-icon-checkbox__border {
+  fill: #f1f1f1; }
+
+.usaf-checkbox .usaf-checkbox__input:disabled:checked + .usaf-checkbox__icon .usaf-icon-checkbox__x,
+.usaf-checkbox:hover .usaf-checkbox__input:disabled:checked + .usaf-checkbox__icon .usaf-icon-checkbox__x {
+  fill: #f1f1f1; }
+
+.usaf-checkbox--checklist {
+  padding-left: 2rem; }
+  .usaf-checkbox--checklist .usaf-checkbox__icon {
+    font-size: 1.375rem; }
+
+.usaf-icon-checklistbox__partial {
+  fill: transparent;
+  transition: fill 0.1s ease-in-out; }
+
+.usaf-icon-checklistbox__check {
+  fill: transparent;
+  transition: fill 0.1s ease-in-out; }
+
+.usaf-icon-checklistbox__box {
+  fill: #c5c8cb;
+  transition: fill 0.1s ease-in-out; }
+
+.usaf-checkbox__input:checked + .usaf-checkbox__icon .usaf-icon-checklistbox__box {
+  fill: transparent; }
+
+.usaf-checkbox__input:checked + .usaf-checkbox__icon .usaf-icon-checklistbox__check {
+  fill: #283b91; }
+
+.usaf-checkbox:hover .usaf-checkbox__icon .usaf-icon-checklistbox__box {
+  fill: #72777d; }
+
+.usaf-checkbox:hover .usaf-checkbox__icon .usaf-icon-checklistbox__check {
+  fill: transparent; }
+
+.usaf-checkbox:hover .usaf-checkbox__input:checked + .usaf-checkbox__icon .usaf-icon-checklistbox__box {
+  fill: transparent; }
+
+.usaf-checkbox:hover .usaf-checkbox__input:checked + .usaf-checkbox__icon .usaf-icon-checklistbox__check {
+  fill: #000000; }
+
+.usaf-checkbox .usaf-checkbox__input:disabled ~ .usaf-checkbox__text,
+.usaf-checkbox:hover .usaf-checkbox__input:disabled ~ .usaf-checkbox__text {
+  color: #f1f1f1;
+  cursor: not-allowed; }
+
+.usaf-checkbox .usaf-checkbox__input:disabled ~ .usaf-checkbox__icon .usaf-icon-checklistbox__partial,
+.usaf-checkbox:hover .usaf-checkbox__input:disabled ~ .usaf-checkbox__icon .usaf-icon-checklistbox__partial {
+  fill: transparent; }
+
+.usaf-checkbox .usaf-checkbox__input:disabled ~ .usaf-checkbox__icon .usaf-icon-checklistbox__check,
+.usaf-checkbox:hover .usaf-checkbox__input:disabled ~ .usaf-checkbox__icon .usaf-icon-checklistbox__check {
+  fill: transparent; }
+
+.usaf-checkbox .usaf-checkbox__input:disabled ~ .usaf-checkbox__icon .usaf-icon-checklistbox__box,
+.usaf-checkbox:hover .usaf-checkbox__input:disabled ~ .usaf-checkbox__icon .usaf-icon-checklistbox__box {
+  fill: #f1f1f1; }
+
+.usaf-checkbox .usaf-checkbox__input:disabled:checked ~ .usaf-checkbox__icon .usaf-icon-checklistbox__partial,
+.usaf-checkbox:hover .usaf-checkbox__input:disabled:checked ~ .usaf-checkbox__icon .usaf-icon-checklistbox__partial {
+  fill: transparent; }
+
+.usaf-checkbox .usaf-checkbox__input:disabled:checked ~ .usaf-checkbox__icon .usaf-icon-checklistbox__check,
+.usaf-checkbox:hover .usaf-checkbox__input:disabled:checked ~ .usaf-checkbox__icon .usaf-icon-checklistbox__check {
+  fill: #f1f1f1; }
+
+.usaf-checkbox .usaf-checkbox__input:disabled:checked ~ .usaf-checkbox__icon .usaf-icon-checklistbox__box,
+.usaf-checkbox:hover .usaf-checkbox__input:disabled:checked ~ .usaf-checkbox__icon .usaf-icon-checklistbox__box {
+  fill: transparent; }
+
+.usaf-checkbox.usaf-checkbox--partial .usaf-checkbox__input:checked + .usaf-checkbox__icon .usaf-icon-checklistbox__partial {
+  fill: #283b91; }
+
+.usaf-checkbox.usaf-checkbox--partial .usaf-checkbox__input:checked + .usaf-checkbox__icon .usaf-icon-checklistbox__check {
+  fill: transparent; }
+
+.usaf-checkbox.usaf-checkbox--partial .usaf-checkbox__input:checked + .usaf-checkbox__icon .usaf-icon-checklistbox__box {
+  fill: #f1f1f1; }
+
+.usaf-checkbox.usaf-checkbox--partial:hover .usaf-checkbox__input:checked + .usaf-checkbox__icon .usaf-icon-checklistbox__partial {
+  fill: #ffffff; }
+
+.usaf-checkbox.usaf-checkbox--partial:hover .usaf-checkbox__input:checked + .usaf-checkbox__icon .usaf-icon-checklistbox__check {
+  fill: transparent; }
+
+.usaf-checkbox.usaf-checkbox--partial:hover .usaf-checkbox__input:checked + .usaf-checkbox__icon .usaf-icon-checklistbox__box {
+  fill: #aab7ee; }
+
+.usaf-checkbox.usaf-checkbox--partial .usaf-checkbox__input:disabled:checked + .usaf-checkbox__icon .usaf-icon-checklistbox__partial,
+.usaf-checkbox.usaf-checkbox--partial:hover .usaf-checkbox__input:disabled:checked + .usaf-checkbox__icon .usaf-icon-checklistbox__partial {
+  fill: #f1f1f1; }
+
+.usaf-checkbox.usaf-checkbox--partial .usaf-checkbox__input:disabled:checked + .usaf-checkbox__icon .usaf-icon-checklistbox__check,
+.usaf-checkbox.usaf-checkbox--partial:hover .usaf-checkbox__input:disabled:checked + .usaf-checkbox__icon .usaf-icon-checklistbox__check {
+  fill: transparent; }
+
+.usaf-checkbox.usaf-checkbox--partial .usaf-checkbox__input:disabled:checked + .usaf-checkbox__icon .usaf-icon-checklistbox__box,
+.usaf-checkbox.usaf-checkbox--partial:hover .usaf-checkbox__input:disabled:checked + .usaf-checkbox__icon .usaf-icon-checklistbox__box {
+  fill: #72777d; }

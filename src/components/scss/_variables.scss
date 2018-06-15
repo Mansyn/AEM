@@ -1,0 +1,64 @@
+// #######################################################################
+//
+//  VARIABLES
+//
+//  This file is intended to track all of the USAF global variables.
+//  Please be thoughtful before adding any new variables to this document 
+//  and careful when selecting variable names. 
+//
+// #######################################################################
+@import 'utils';
+
+// ------------------------------------------------------------------------
+//
+//  COLORS
+//
+// ------------------------------------------------------------------------
+$white: #ffffff;
+$lighter-gray: #f1f1f1;
+$light-gray: #c5c8cb;
+$medium-gray: #72777d;
+$dark-gray: #494949;
+$black: #000000;
+$dark-blue: #08131c;
+$blue-violet: #283b91;
+$violet: #576fdf;
+$lavender: #aab7ee;
+$sky-blue: #0ebdf6;
+$green: #639f3e;
+$yellow: #ffba00;
+$light-yellow: #fff8e5;
+$red: #c21d33;
+$color-body: $dark-gray;
+
+
+// ------------------------------------------------------------------------
+//
+//  BREAKPOINTS
+//  
+//  example usage:
+//    @media #{$bp-small-only} {
+//      color: green;
+//    }
+// ------------------------------------------------------------------------
+
+// Settings
+$bp-small: (max:calc-rem(600px));
+$bp-medium: (min: calc-rem(601px), max: calc-rem(1024px)); 
+$bp-large: (min: calc-rem(1025px), max: calc-rem(1200px)); 
+$bp-large: (min: calc-rem(1025px), max: calc-rem(1440px)); 
+$bp-xlarge: (min: calc-rem(1441px));
+
+// Query Presets
+$mq-small-only: '(max-width: #{map-get($bp-small, max)})';
+$mq-medium-only: '(min-width: #{map-get($bp-medium, min)}) and (max-width: #{map-get($bp-medium, max)})';
+$mq-medium-up: '(min-width: #{map-get($bp-medium, min)})';
+$mq-large-only: '(min-width: #{map-get($bp-large, min)}) and (max-width: #{map-get($bp-large, max)})';
+$mq-large-up: '(min-width: #{map-get($bp-large, min)})';
+
+// ------------------------------------------------------------------------
+//
+//  LAYOUT
+//
+// ------------------------------------------------------------------------
+$app-max-width: 1170px; // max width of container elements final size TBD

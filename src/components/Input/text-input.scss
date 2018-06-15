@@ -1,0 +1,37 @@
+@import '../scss/variables';
+@import '../scss/utils';
+
+// background colors
+$input-background-color: $lighter-gray;
+$input-background-color-focused: $white;
+$input-background-color-disabled: $light-gray;
+
+// text colors
+$input-text-color: $dark-gray;
+
+// border colors
+$input-border-color-focused: $blue-violet;
+
+.usaf-input {
+  background: $input-background-color;
+  border: calc-rem(1px) solid $input-background-color;
+  color: $input-text-color;
+  display: block;
+  font-size: calc-rem(14px);
+  padding: calc-rem(10px);
+  transition: background-color ease-out 0.1s;
+  width: 100%;
+
+  &:focus {
+    background-color: $input-background-color-focused;
+    border: calc-rem(1px) solid $input-border-color-focused;
+    box-shadow: none;
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: $input-background-color-disabled;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+}

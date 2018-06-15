@@ -1,0 +1,26 @@
+@import '../scss/variables';
+
+.usaf-icon {
+  display: inline-block;
+  height: 1em;
+  line-height: 1;
+  overflow: hidden;
+}
+
+.usaf-icon__svg {
+  fill: currentColor;
+  height: 1em;
+  width: 1em;
+}
+
+.usaf-icon--primary {
+  color: $blue-violet;
+}
+
+.usaf-icon--secondary {
+  color: $lavender;
+}
+
+.usaf-icon--tertiary {
+  color: $sky-blue;
+}

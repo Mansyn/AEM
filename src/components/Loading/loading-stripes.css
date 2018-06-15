@@ -1,0 +1,18 @@
+.usaf-loading-stripes {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: repeating-linear-gradient(-50deg, #f1f1f1 0, #f1f1f1 63px, transparent 63px, transparent 90px);
+  background-size: 117.4868px 140.01489px;
+  animation: stripes 1s linear infinite; }
+
+.usaf-loading-stripes--progress {
+  right: auto; }
+
+@keyframes stripes {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: -117.4868px 0; } }

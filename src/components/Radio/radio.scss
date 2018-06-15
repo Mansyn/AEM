@@ -1,0 +1,140 @@
+// ------------------------------------
+// HTML structure/nesting
+// ------------------------------------
+//  label.usaf-radio.usaf-radio--small|medium|large
+//    input.usaf-radio__input
+//    svg.usaf-radio__icon
+//      circle.usaf-radio__stroke
+//      circle.usaf-radio__fill
+//      circle.usaf-radio__dot
+//    span.usaf-radio__input-text
+
+//Import global vars/mixins
+@import '../scss/variables';
+@import '../scss/utils';
+
+
+//Local variables
+$radio-color-active: $blue-violet;
+$radio-color-hover: $lavender;
+$radio-color-disabled: $lighter-gray;
+$radio-gutter: calc-rem(5px);
+$radio-border-ratio: 0.125;
+$radio-size-sm: calc-rem(16px);
+$radio-size-med: calc-rem(20px);
+$radio-size-lg: calc-rem(28px);
+
+
+//Label/wrapper
+.usaf-radio {
+  align-items: center;
+  display: inline-flex;
+  min-height: $radio-size-sm;
+  padding: 0 0 0 ($radio-size-sm + $radio-gutter);
+  position: relative;
+}
+
+//Input element
+.usaf-radio__input {
+  @include visually-hidden;
+
+  //Hover state
+  &:hover {
+    ~ .usaf-radio__icon .usaf-radio__dot {
+      fill: $radio-color-hover;
+    }
+  }
+  //Disabled state
+  &:disabled {
+    ~ .usaf-radio__input-text {
+      color: $radio-color-disabled;
+      cursor: not-allowed;
+    }
+
+    ~ .usaf-radio__icon {
+      cursor: not-allowed;
+
+      .usaf-radio__stroke {
+        fill: $radio-color-disabled;
+      }
+    }
+    //this is to prevent the hover on a disabled state
+    &:hover ~ .usaf-radio__icon .usaf-radio__dot {
+      fill: $white;
+      //background-color: $white;
+    }
+  }
+  //Checked state
+  &:checked {
+    ~ .usaf-radio__icon {
+      .usaf-radio__dot {
+        fill: $radio-color-active;
+      }
+    }
+  }
+  //Disabled & Checked
+  &:disabled:checked {
+    ~ .usaf-radio__icon .usaf-radio__dot {
+      fill: $radio-color-disabled;
+    }
+  }
+}
+
+
+//Input icon - this is the visual "radio" as the `input` is hidden
+.usaf-radio__icon {
+  display: block;
+  height: $radio-size-sm;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: $radio-size-sm;
+
+  circle {
+    transition: fill 0.3s ease-in-out;
+  }
+}
+
+.usaf-radio__stroke {
+  fill: black;
+}
+
+.usaf-radio__fill {
+  fill: $white;
+}
+
+.usaf-radio__dot {
+  fill: $white;
+}
+
+
+//Input text - this is where all the font stuff goes
+.usaf-radio__input-text {
+  font-size: calc-rem(22px);
+  color: $blue-violet;
+  font-weight:600;
+}
+
+
+//Radio size variants
+.usaf-radio--medium {
+  min-height: $radio-size-med;
+  padding-left: $radio-size-med + $radio-gutter;
+
+  .usaf-radio__icon {
+    // border-width: $radio-size-med * $radio-border-ratio;
+    height: $radio-size-med;
+    width: $radio-size-med;
+  }
+}
+
+.usaf-radio--large {
+  min-height: $radio-size-lg;
+  padding-left: $radio-size-lg + $radio-gutter;
+
+  .usaf-radio__icon {
+    height: $radio-size-lg;
+    width: $radio-size-lg;
+  }
+}

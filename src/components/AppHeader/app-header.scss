@@ -1,0 +1,168 @@
+@import '../scss/utils';
+@import '../scss/variables';
+
+$application-header-height: calc-rem(70px);
+$menu-size: calc-rem(14px);
+$panel-width: calc-rem(227px);
+$panel-background-color: #172129;
+$panel-left-gutter: calc-rem(24px);
+$panel-separator-color: #454d54;
+
+// ------------------------------------
+//  OVERLAY DIAGONAL LINE PROPS
+// ------------------------------------
+$bg-overlay-start: 125;
+$bg-overlay-line-repeat-times: 7;
+$bg-overlay-line-width: 45;
+$bg-overlay-line-separation-distance: 30;
+$bg-overlay-line-opacity: 0.04;
+
+// ------------------------------------------------------------------------
+// bg-overlay
+//
+// An SCSS Mixin for creating diagonal overlays
+// Accepts Start Point, Number of Lines, Line Width, Line Separation, Line Opacity
+// Returns a background property with the calculated linear-gradient
+//
+// example:
+//  @include bg-overlay(125, 7, 45, 30, 0.04);
+//
+// ------------------------------------------------------------------------
+@mixin bg-overlay($start, $repeat, $wd, $sep, $op) {
+  $lines: ();
+  @for $i from 0 through $repeat {
+    $stop-1: (($i - 1) * ($wd + $sep)) + $start;
+    $stop-2: $stop-1 + $wd;
+    $stop-3: $stop-2 + $sep;
+    @if $i != 0 {
+      $lines: append($lines, unquote(', '));
+      $lines: append($lines, (rgba($white, $op) #{$stop-1}px, rgba($white, $op) #{$stop-2}px, rgba($white, 0) #{$stop-2}px, rgba($white, 0) #{$stop-3}px));
+    }
+    @else {
+      $lines: append($lines, (rgba($white, 0) 0, rgba($white, 0) #{$start}px));
+    }
+  }
+  background: $dark-blue linear-gradient(45deg, $lines) no-repeat;
+}
+
+// main component
+.usaf-app-header {
+  @include bg-overlay($bg-overlay-start, $bg-overlay-line-repeat-times, $bg-overlay-line-width, $bg-overlay-line-separation-distance, $bg-overlay-line-opacity);
+  border-bottom: calc-rem(1px) solid #2c353d;
+  color: $white;
+  height: calc-rem(70px);
+  line-height: calc-rem(70px);
+  vertical-align: middle;
+  width: 100%;
+}
+
+// USAF logo
+.usaf-app-header__logo {
+  height: calc-rem(52px);
+  margin: calc-rem(9px) calc-rem(11px);
+  width: calc-rem(58px);
+  float: left;
+}
+
+// application title
+.usaf-app-header__title {
+  font-style: italic;
+  float: left;
+}
+
+// list of horizontal navigation links
+.usaf-app-header__navigation {
+  float: right;
+  list-style-type: none;
+  font-size: calc-rem(14px);
+  margin: 0 calc-rem(15px);
+}
+
+// navigation link item
+.usaf-app-header__navigation-item {
+  display: inline-block;
+  margin: 0 calc-rem(15px);
+  position: relative;
+}
+
+.usaf-app-header__navigation-link {
+  color: $white;
+  text-decoration: none;
+
+  &:hover{
+    border-bottom: calc-rem(1px) solid $white;
+  }
+}
+
+.usaf-app-header__navigation-link--selected {
+    border-bottom: calc-rem(1px) solid $white;
+}
+
+// Menu Container - contains toggle, menu icons, and side panel
+.usaf-app-header__menu {
+  float: right;
+  height: 100%;
+  margin: calc-rem(0 15px);
+  vertical-align: middle;
+}
+
+.usaf-app-header__menu-toggle {
+  @include visually-hidden();
+} 
+
+.usaf-app-header__menu-toggle-label:hover {
+  color: $sky-blue;
+}
+
+.usaf-app-header__icon-menu-close {
+  display: none;
+}
+
+.usaf-app-header__icon-hamburger-menu {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.usaf-app-header__menu-toggle:checked {
+  + label .usaf-app-header__icon-menu-close {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  + label .usaf-app-header__icon-hamburger-menu {
+    display: none;
+  }
+
+  ~ .usaf-app-header__panel {
+    transform: translateX(0);
+  }
+}
+
+// side panel
+.usaf-app-header__panel {
+  bottom: 0;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  top: $application-header-height;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  width: $panel-width;
+}
+.usaf-app-header__panel-list {
+  background-color: $panel-background-color;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+  li {
+    background-color: $panel-background-color;
+    border-bottom: calc-rem(1px) solid $panel-separator-color;
+    display: block;
+    line-height: 100%;
+    padding: calc-rem(30px) $panel-left-gutter;
+    position: relative;
+    width: 100%;
+  }
+}

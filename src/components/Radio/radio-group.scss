@@ -1,0 +1,25 @@
+// ------------------------------------
+// HTML structure/nesting
+// ------------------------------------
+//  div.usaf-radio-group(.usaf-radio-group--inline|block)
+//    *?
+//      Radio (@see radio.scss for details)
+
+
+//Import global vars/mixins
+@import '../scss/variables';
+@import '../scss/utils';
+
+
+//Local variables
+.usaf-radio-group--inline {
+  > .usaf-radio {
+    padding-right: calc-rem(10px);
+  }
+}
+
+.usaf-radio-group--block {
+  > .usaf-radio {
+    display: flex;
+  }
+}

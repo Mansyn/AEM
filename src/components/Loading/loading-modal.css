@@ -1,0 +1,15 @@
+.usaf-loading-modal__window {
+  max-width: none;
+  min-width: 34.375rem;
+  height: 9.375rem; }
+
+.usaf-loading-modal__content {
+  position: absolute;
+  top: 50%;
+  left: 3.125rem;
+  transform: translateY(-50%);
+  margin: 0;
+  font-style: italic;
+  color: #494949;
+  font-size: 2.25rem;
+  line-height: 1.5; }

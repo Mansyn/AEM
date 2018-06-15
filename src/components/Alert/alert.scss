@@ -1,0 +1,34 @@
+@import '../scss/variables';
+@import '../scss/utils';
+
+// ------------------------------------
+// HTML structure/nesting
+// ------------------------------------
+//	div.usaf-alert
+// 		div.usaf-alert__icon
+//        <IconWarn />
+// 		div.usaf-alert__content
+// 		  props.children[]
+
+// Local Variables
+$alert-bg: $light-yellow;
+
+.usaf-alert {
+  background-color: $alert-bg;
+  display: table;
+  padding: calc-rem(12px);
+  width: 100%;
+
+  .usaf-alert__content {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .usaf-alert__icon {
+    display: table-cell;
+    font-size: calc-rem(21px);
+    padding-top: calc-rem(5px);
+    vertical-align: top;
+    width: calc-rem(26px);
+  }
+}

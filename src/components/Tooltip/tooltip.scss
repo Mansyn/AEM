@@ -1,0 +1,23 @@
+// ##################################################
+// Tooltip component
+// ##################################################
+//Import global vars/mixins
+@import '../scss/variables';
+@import '../scss/utils';
+@import '../scss/typography';
+
+.usaf-tooltip__trigger {
+  display: 'inline-block';
+}
+
+.usaf-tooltip__popup {
+  background-color: $lighter-gray;
+  color: $black;
+  font-size: calc-rem(12px);
+  max-width: calc-rem(375px);
+  padding: calc-rem(20px);
+  margin: calc-rem(5px);
+  text-align: left;
+  z-index: 25;
+  box-shadow: calc-rem(5px 5px 0 0) rgba($black, 0.2), calc-rem(1px 1px 7px 0) rgba($black, 0.5);
+}

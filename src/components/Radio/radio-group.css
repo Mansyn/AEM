@@ -1,0 +1,5 @@
+.usaf-radio-group--inline > .usaf-radio {
+  padding-right: 0.625rem; }
+
+.usaf-radio-group--block > .usaf-radio {
+  display: flex; }

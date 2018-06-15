@@ -1,0 +1,139 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box; }
+
+.usaf-select {
+  display: inline-block;
+  margin: 0 0 2.5rem;
+  position: relative;
+  text-align: left;
+  transition: z-index 0s 0.3s;
+  z-index: 1; }
+  .usaf-select button {
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1; }
+
+.usaf-select--block {
+  display: block; }
+
+.usaf-select__element {
+  appearance: none;
+  background: 0 0;
+  border: none;
+  display: block;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -999999; }
+
+.select__text {
+  appearance: none;
+  background-color: #f1f1f1;
+  border: 0.125rem solid #72777d;
+  cursor: pointer;
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  padding: 0.5625rem 2.1875rem 0.5625rem 0.25rem;
+  position: relative;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%; }
+  .select__text::after {
+    border-color: #494949 transparent transparent transparent;
+    border-style: solid;
+    border-width: 0.625rem 0.375rem 0 0.375rem;
+    content: '';
+    display: block;
+    height: 0;
+    position: absolute;
+    right: 0.3125rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(0);
+    transition: transform 0.2s;
+    width: 0; }
+  .select__text::before {
+    background-color: #494949;
+    content: '';
+    display: block;
+    height: 1rem;
+    position: absolute;
+    right: 1.5625rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.09375rem; }
+
+.select__options {
+  background-color: #ffffff;
+  border: 0.0625rem solid #c5c8cb;
+  border-width: 0.125rem 0.125rem 0.0625rem;
+  box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.25);
+  left: 0;
+  list-style-type: none;
+  margin: 0.0625rem 0 0 0;
+  max-height: 13.5rem;
+  min-width: 100%;
+  opacity: 0;
+  overflow: auto;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  transition: visibility 0s 0.3s, opacity 0.1s 0.2s;
+  visibility: hidden;
+  width: auto; }
+
+.select__option button {
+  appearance: none;
+  background: none;
+  border: none;
+  display: block;
+  padding: 0.625rem 1.875rem 0.625rem 0.625rem;
+  text-align: left;
+  white-space: nowrap;
+  width: 100%; }
+  .select__option button:hover, .select__option button:focus {
+    background-color: #aab7ee; }
+
+.select__option--selected button {
+  background-color: #aab7ee; }
+
+.select__optgroup {
+  color: #c5c8cb;
+  font-size: 0.875rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  .select__optgroup .select__optgroup-label {
+    padding: 0.625rem 0.625rem 0;
+    text-align: left;
+    white-space: nowrap; }
+  .select__optgroup .select__option button {
+    padding-left: 1.25rem; }
+
+.usaf-select--open {
+  transition: z-index 0s 0s;
+  z-index: 3; }
+  .usaf-select--open .select__options {
+    opacity: 1;
+    transition: visibility 0s 0s, opacity 0.1s;
+    visibility: visible; }
+  .usaf-select--open .select__text::after {
+    transform: translateY(-50%) rotate(180deg); }
+
+.usaf-select--disabled {
+  color: #c5c8cb;
+  cursor: disabled; }
+  .usaf-select--disabled .select__text {
+    border: 0.125rem solid #c5c8cb;
+    color: #c5c8cb;
+    cursor: not-allowed; }
+    .usaf-select--disabled .select__text::after {
+      border-color: #c5c8cb transparent transparent transparent; }
+    .usaf-select--disabled .select__text::before {
+      background-color: #c5c8cb; }

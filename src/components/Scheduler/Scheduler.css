@@ -1,0 +1,56 @@
+
+.sched-modal-content{margin: auto;width:98%;max-width:1170px;min-height:141px;max-height:530px;background-color:#dbdbdb;border:1px solid;overflow:auto;position: absolute;top: 0; left: 0; bottom: 0; right: 0;}
+.sched-header{background: linear-gradient(to bottom, rgb(77,91,107) 0%, rgb(66,77,93) 35%, rgb(50,64,81) 70%, rgb(46,61,78) 99%);width:100%;height:30px;line-height: 30px;color:#fff;font-size:11px;padding:0 10px;border-bottom:1px solid #4c4c4c;}
+.sched-header-spacer{background-color:rgb(221, 221, 221);width:100%;margin:0;height:30px;}
+.sched-nav{background: linear-gradient(to bottom, rgb(243, 243, 243) 0%, rgb(237, 237, 237) 35%, rgb(232, 232, 232) 70%, rgb(228, 228, 228) 99%);height:30px;width:100%;margin:0;padding:0px 0px 5px;line-height:30px;color:#000;}
+.sched-menu-head{border:1px solid #000;color:#283b91;border-left:none;background-color:lightslategray;margin:5px 0;width:100%;height:25px;line-height:25px;}
+.sched-menu-head:hover{color:black;}
+.sched-menu-rightpad{padding-right:15px;}
+.sched-highlight:hover{background-color:lightgray;}
+.sched-menuCollapseButton{float:right;height:100%;width:20px;text-align:center;padding:0;margin:0;border-left:0;}
+.sched-menuCollapseButton:active{outline:none;}
+.sched-menuCollapseButton:focus{outline:none;border:none;}
+
+/* Buttons */
+.sched-menuCollapseButton{float:right;height:700px;width:20px;text-align:center;padding:0;margin:0;}
+.sched-close-button{background:transparent;border:0;color:#fff;float:right;}
+.sched-close-button:hover{color:lightskyblue;border:0;}
+.sched-close-button:active{border:0;outline:none;}
+.sched-nav-btn{border:0;height:25px;line-height:25px;background: linear-gradient(to bottom, rgb(243, 243, 243) 0%, rgb(237, 237, 237) 35%, rgb(232, 232, 232) 70%, rgb(228, 228, 228) 99%);}
+.sched-nav-btn:hover{border:0;background:gray;}
+.sched-nav-btn:active{background:#000;color:#fff;border:0;outline:none;}
+.sched-nav-btn-active{background:#000;color:#fff;border:0;outline:none;}
+.sched-nav-btn-active:hover{background:#000;color:#fff;border:0;}
+.sched-holdNotifications-btn{line-height:20px;	border-radius: 4px; border: 1px solid #000;margin-right: 15px; width:50px;outline:none;height:20px;padding:0;}
+.sched-ScheduleReport-btn{float:right;margin:5px;}
+.sched-Cancel-btn{float:right;margin:5px 5px 5px 0;}
+
+.sched-Add-Triggers-btn{margin:5px;}
+
+.sched-edit-email-link{color:#283b91;font-size: 11px;font-weight:600;}
+.sched-modal{z-index:3;display:none;padding-top:30px;position:fixed;left:50%;top:50%;width:100%;height:100%;overflow:auto;background-color:rgba(0,0,0,0.4);transform: translate(-50%, -50%);}
+.sched-left-section{padding:0;}
+.sched-right-section{border-left:1px solid #4c4c4c;height:380px;}
+.sched-body-header{border-bottom:1px solid #4c4c4c;line-height:30px;height:30px;color:#c4cadc; font-weight:600;}
+.sched-body{border:1px solid #4c4c4c;margin:10px 1px;}
+.sched-titleBox{width:100%;padding:0;margin:0;color:#283b91;padding-left:5px;}
+.sched-hr{margin-top:5px;margin-bottom:5px; background-color:#4c4c4c;height:1px;border:0 none;}
+.schedTitleCharsLeft{float:right;}
+.sched-cc-input{width:100%;height:60px;}
+.calendarPlaceHolder{float:left;border:1px solid #4c4c4c;height:150px;width:200px;line-height: 150px;text-align: center;margin:5px;border:1px solid #9a9fa4;}
+.timePickerPlaceholder{border:1px solid #4c4c4c;height:30px;width:150px;line-height: 30px;text-align: center;border:1px solid #9a9fa4;}
+.nopad{padding:0;}
+.sched-alert-triggers{height:100px;clear:both;}
+.sched-alert-trigger-container{min-height:300px;}
+.sched-note{position: absolute;bottom: 0;left: 0;padding:15px;}
+.sched-recurrence-spacer{height:100px;}
+.sched-days-box{width:24px;height:20px;margin:0 5px;}
+.sched-days-box-disabled{width:24px;height:20px;margin:0 5px;color:gray;}
+.timeBox{width:35px;margin:0 5px;border:0;}
+.tempScroller{margin-top:10px;padding-top:10px;}
+.sched-first-right-div{padding:0 0 0 15px;}
+label.sched-blue-text{color:#283b91 !important; font-weight: 600;}
+.sched-black-text{color:#000;font-weight: 500;}
+.sched-spec-time{width:40px; font-size: 14px;}
+.sched-time-holder{width:320px;height:20px;}
+.sched-time-picker{margin:0 5px;width:40px;height:20px;font-size: 14px;line-height: 18px;border:0;}

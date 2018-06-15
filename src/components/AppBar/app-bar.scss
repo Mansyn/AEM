@@ -1,0 +1,49 @@
+@import '../scss/variables';
+@import '../scss/utils';
+
+// Local Variables
+$app-bar-bg-color: $lighter-gray;
+$app-bar-border-color: $dark-gray;
+$app-bar-border-height: calc-rem(5px);
+$app-container-max-width: calc-rem(1200px); //TODO: inherit from _variables when container model implemented
+
+.usaf-app-bar {
+  background-color: $app-bar-bg-color;
+
+  .usaf-app-bar__content {
+    margin: 0 auto;
+    max-width: $app-container-max-width;
+    padding: calc-rem(5px);
+    position: relative;
+
+    &.usaf-app-bar--bottom {
+      margin-bottom: $app-bar-border-height;
+    }
+
+    &.usaf-app-bar--bottom::after {
+      background-color: $app-bar-border-color;
+      bottom: -$app-bar-border-height;
+      content: '';
+      display: block;
+      height: $app-bar-border-height;
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
+
+    &.usaf-app-bar--top {
+      margin-top: $app-bar-border-height;
+    }
+
+    &.usaf-app-bar--top::before {
+      background-color: $app-bar-border-color;
+      content: '';
+      display: block;
+      height: $app-bar-border-height;
+      left: 0;
+      position: absolute;
+      top: -$app-bar-border-height;
+      width: 100%;
+    }
+  }
+}

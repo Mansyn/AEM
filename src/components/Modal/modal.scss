@@ -1,0 +1,77 @@
+// ____________________________________
+// HTML structure/nesting
+// ____________________________________
+//  div.usaf-modal__portal
+//    div.usaf-modal__overlay
+//    div.usaf-modal__content
+
+//Import global vars/mixins
+@import '../scss/variables';
+@import '../scss/utils';
+$modal-overlay-color: #02090e;
+$modal-window-padding: calc-rem(30px);
+$modal-btn-bar-height: calc-rem(30px);
+$modal-title-height: calc-rem(30px);
+
+.usaf-modal__portal {
+  .usaf-modal__overlay {
+    background-color: rgba($modal-overlay-color, 0.95);
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+
+  .usaf-modal__window {
+    background-color: $white;
+    border-color: $modal-overlay-color;
+    border-radius: 0;
+    border-width: calc-rem(2px);
+    bottom: 0;
+    left: 0;
+    margin: 0 auto;
+    max-width: calc-rem(400px);
+    outline: none;
+    padding: $modal-window-padding;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.usaf-modal__close-btn {
+  font-size: calc-rem(28px);
+  padding: 0;
+  position: absolute;
+  right: $modal-window-padding;
+  top: $modal-window-padding;
+}
+
+.usaf-modal__title {
+  font-size: calc-rem(24px);
+  font-weight: normal;
+  height: $modal-title-height;
+  margin: 0;
+}
+
+.usaf-modal__content {
+  height: calc(100% - #{$modal-window-padding});
+  overflow-y: scroll;
+}
+
+.usaf-modal__btn-bar {
+  bottom: $modal-window-padding;
+  height: $modal-btn-bar-height;
+  position: absolute;
+  right: $modal-window-padding;
+
+  .usaf-btn {
+    margin-left: calc-rem(10px);
+  }
+}
+
+.usaf-modal--confirm .usaf-modal__content {
+  height: calc(100% - (#{$modal-window-padding} + #{$modal-btn-bar-height} + #{calc-rem(10px)}));
+}

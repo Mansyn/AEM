@@ -1,0 +1,146 @@
+@import '../scss/variables';
+@import '../scss/typography';
+@import '../scss/utils';
+
+//Local variables
+$tab-bar-tabs-background-color: $lighter-gray;
+$tab-bar-tabs-shadow-color: $light-gray;
+$tab-bar-tabs-active-btn-background-color: $white;
+$tab-bar-tabs-active-btn-color: $dark-gray;
+$tab-bar-tabs-active-btn-border-color: $light-gray;
+$tab-bar-tabs-hover-btn-background-color: $light-gray;
+$tab-bar-tabs-btn-color: $medium-gray;
+
+$tab-bar-pills-btn-border-color: $light-gray;
+$tab-bar-pills-hover-btn-background-color: $light-gray;
+$tab-bar-pills-active-background-color: $medium-gray;
+$tab-bar-pills-background-color: $lighter-gray;
+$tab-bar-pills-btn-color: $medium-gray;
+$tab-bar-pills-btn-active-color: $white;
+$tab-bar-pills-btn-active-gradient-spread: calc-rem(10px);
+
+//TAB GROUP
+// .usaf-tab-group {}
+
+//INDIVIDUAL TAB
+.usaf-tab-group__tab {
+  display: inline-block;
+}
+
+//TAB BUTTON (button)
+.usaf-tab-group__btn {
+  @include set-font($weight: bold);
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  color: $tab-bar-tabs-btn-color;
+  cursor: pointer;
+  display: block;
+  font-size: calc-rem(14px);
+  min-width: calc-rem(74px);
+  outline: none;
+  padding: calc-rem(10px 12px);
+  position: relative;
+  text-transform: uppercase;
+  vertical-align: top;
+  z-index: 1;
+}
+
+
+//-----------------------------------------------
+// TAB VARIANT
+//-----------------------------------------------
+.usaf-tab-group__tabs {
+  position: relative;
+  padding-left: calc-rem(40px);
+  padding-top: calc-rem(10px);
+  list-style-type: none;
+  background-color: $tab-bar-tabs-background-color;
+
+  //bottom shadow
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: $tab-bar-pills-btn-active-gradient-spread * -1;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: $tab-bar-pills-btn-active-gradient-spread;
+    background-color: inherit;
+    box-shadow: 0 0 $tab-bar-pills-btn-active-gradient-spread rgba($black, 0.25);
+    clip: rect(#{($tab-bar-pills-btn-active-gradient-spread * -1)} auto 0 0);
+  }
+
+  .usaf-tab-group__tab {
+    position: relative;
+    margin: calc-rem(0 2px);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      border: calc-rem(1px) solid transparent;
+      border-radius: calc-rem(5px 5px 0 0);
+      border-width: calc-rem(1px 1px 0 1px);
+    }
+
+    &:not(.usaf-tab-group__tab--active):hover::before {
+      background-color: $tab-bar-tabs-hover-btn-background-color;
+      border-color: $tab-bar-tabs-hover-btn-background-color;
+    }
+  }
+
+  //ACTIVE TAB (li)
+  .usaf-tab-group__tab--active {
+    color: $tab-bar-tabs-active-btn-color;
+
+    //tab graphic
+    &::before {
+      background-color: $tab-bar-tabs-active-btn-background-color;
+      border-color: $tab-bar-tabs-active-btn-border-color;
+      box-shadow: 0 0 $tab-bar-pills-btn-active-gradient-spread rgba($black, 0.25);
+      clip: rect(#{($tab-bar-pills-btn-active-gradient-spread * -1)} #{calc-rem(999px)} auto #{($tab-bar-pills-btn-active-gradient-spread * -1)});
+    }
+  }
+}
+
+
+
+//-----------------------------------------------
+// PILL VARIANT
+//-----------------------------------------------
+.usaf-tab-group__pills {
+  padding-left: calc-rem(5px);
+
+  .usaf-tab-group__btn {
+    background-color: $tab-bar-pills-background-color;
+    border: calc-rem(1px) solid $tab-bar-pills-btn-border-color;
+    border-width: calc-rem(1px 0 1px 1px);
+    color: $tab-bar-pills-btn-color;
+    outline: none;
+  }
+
+  .usaf-tab-group__tab {
+    //extra border for the last `li`
+    &:last-of-type .usaf-tab-group__btn {
+      border-right-width: calc-rem(1px);
+    }
+
+    //hover state for non-active buttons
+    &:not(.usaf-tab-group__tab--active) .usaf-tab-group__btn:hover {
+      background-color: $tab-bar-pills-hover-btn-background-color;
+    }
+  }
+
+  .usaf-tab-group__tab--active .usaf-tab-group__btn {
+    border-color: $tab-bar-pills-active-background-color;
+    background-color: $tab-bar-pills-active-background-color;
+    color: $tab-bar-pills-btn-active-color;
+  }
+}
+

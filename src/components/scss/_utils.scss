@@ -1,0 +1,116 @@
+// ------------------------------------------------------------------------
+//
+// UTILS
+// 
+// Functions and Mixins for use across USAF components and applications
+//
+// ------------------------------------------------------------------------
+
+
+// ------------------------------------------------------------------------
+// calc-rem
+// 
+// Accepts a single value or list of PIXEL values
+// Returns a single string or rem values
+//
+// examples:
+//  padding: calc-rem(0 20px auto 30px);
+//  font-size: calc-rem(14px); 
+// ------------------------------------------------------------------------
+@function calc-rem($val) {
+
+  //default for return value
+  $remValues: ();
+
+  //If the value is not a list , 
+  @if length($val) == 1 {
+    @return _calc-rem($val);
+  }
+
+  //Loop over values
+  @for $i from 1 through (length($val)) {
+    //Store the local iteration for readability
+    $currentValue: _calc-rem(nth($val, $i));
+    $remValues: append($remValues, $currentValue);
+  }
+  @return $remValues;
+}
+
+// ------------------------------------------------------------------------
+// _calc-rem
+// 
+// Accepts a single value only. This is meant to be utilized by other functions
+// Returns a single string or rem values
+//
+// ------------------------------------------------------------------------
+@function _calc-rem($val) {
+  @if type-of($val) == number and $val != 0 {
+    @return ($val / 16px) * 1rem;
+  }
+  @return $val;
+}
+
+// ------------------------------------------------------------------------
+// visually-hidden
+// 
+// Hide an element from display while keeping it accessible to
+// screen readers
+// ------------------------------------------------------------------------
+@mixin visually-hidden() {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+// ------------------------------------------------------------------------
+// css-triangle
+// 
+// This mixin was taken from Zurb Foundation. 
+// Creates a CSS triangle, which can be used for dropdown arrows, dropdown 
+// pips, and more. Use this mixin inside a `&::before` or `&::after` 
+// selector, to attach the triangle to an existing element.
+// 
+// @param {Number} $triangle-size - Width of the triangle.
+// @param {Color} $triangle-color - Color of the triangle.
+// @param {Keyword} $triangle-direction - Direction the triangle points. Can be `up`, `right`, `down`, or `left`.
+// ------------------------------------------------------------------------
+@mixin css-triangle(
+  $triangle-size,
+  $triangle-color,
+  $triangle-direction
+) {
+  display: block;
+  width: 0;
+  height: 0;
+
+  border: inset $triangle-size;
+
+  content: '';
+
+  @if ($triangle-direction == down) {
+    border-bottom-width: 0;
+    border-top-style: solid;
+    border-color: $triangle-color transparent transparent;
+  }
+  @if ($triangle-direction == up) {
+    border-top-width: 0;
+    border-bottom-style: solid;
+    border-color: transparent transparent $triangle-color;
+  }
+  @if ($triangle-direction == right) {
+    border-right-width: 0;
+    border-left-style: solid;
+    border-color: transparent transparent transparent $triangle-color;
+  }
+  @if ($triangle-direction == left) {
+    border-left-width: 0;
+    border-right-style: solid;
+    border-color: transparent $triangle-color transparent transparent;
+  }
+}

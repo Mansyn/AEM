@@ -1,0 +1,73 @@
+@import '../scss/utils';
+@import '../scss/variables';
+
+
+$transition_duration: 0.4s;
+
+.usaf-collapsible-list {
+  max-height: 100%;
+  padding-bottom: calc-rem(10px);
+  margin-bottom: calc-rem(15px);
+
+  background: linear-gradient(to right, $light-gray 25%, rgba(255, 255, 255, 0) 0%) bottom;
+  background-size: calc-rem(4px 1px);
+  background-repeat: repeat-x;
+}
+
+.usaf-collapsible-list__header {
+  border: none;
+  background-color: transparent;
+  font-size: calc-rem(16px);
+  color: $dark-gray;
+  margin-bottom: calc-rem(5px);
+}
+
+.usaf-collapsible-list__header-icon {
+  color: $medium-gray;
+  font-size: calc-rem(10px);
+}
+
+.usaf-collapsible-list__header-label {
+  padding-left: calc-rem(5px);
+  color: inherit;
+}
+
+.usaf-collapsible-list__list-container {
+  transition: max-height $transition_duration ease-in;
+  overflow: auto;
+  padding: 0;
+}
+
+.usaf-collapsible-list-item {
+  position: relative;
+  border: none;
+  background-color: transparent;
+  font-size: calc-rem(13px);
+  display: inline-block;
+  width: 100%;
+  padding: calc-rem(5px 20px);
+  
+  &:hover {
+    background-color: $lighter-gray;
+  }
+}
+
+.usaf-collapsible-list-item--selected {
+  background-color: $lighter-gray;
+}
+
+.usaf-collapsible-list-item--selected::before { 
+    content: "•";
+    position: absolute;
+    left: calc-rem(5px);
+    width: calc-rem(10px);
+}
+
+.usaf-collapsible-list__list-container--open {
+  max-height: calc-rem(800px);
+}
+
+.usaf-collapsible-list__list-container--closed {
+  max-height: 0;
+  overflow: hidden;
+}

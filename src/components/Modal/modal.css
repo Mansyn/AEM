@@ -1,0 +1,51 @@
+.usaf-modal__portal .usaf-modal__overlay {
+  background-color: rgba(2, 9, 14, 0.95);
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0; }
+
+.usaf-modal__portal .usaf-modal__window {
+  background-color: #ffffff;
+  border-color: #02090e;
+  border-radius: 0;
+  border-width: 0.125rem;
+  bottom: 0;
+  left: 0;
+  margin: 0 auto;
+  max-width: 25rem;
+  outline: none;
+  padding: 1.875rem;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%); }
+
+.usaf-modal__close-btn {
+  font-size: 1.75rem;
+  padding: 0;
+  position: absolute;
+  right: 1.875rem;
+  top: 1.875rem; }
+
+.usaf-modal__title {
+  font-size: 1.5rem;
+  font-weight: normal;
+  height: 1.875rem;
+  margin: 0; }
+
+.usaf-modal__content {
+  height: calc(100% - 1.875rem);
+  overflow-y: scroll; }
+
+.usaf-modal__btn-bar {
+  bottom: 1.875rem;
+  height: 1.875rem;
+  position: absolute;
+  right: 1.875rem; }
+  .usaf-modal__btn-bar .usaf-btn {
+    margin-left: 0.625rem; }
+
+.usaf-modal--confirm .usaf-modal__content {
+  height: calc(100% - (1.875rem + 1.875rem + 0.625rem)); }

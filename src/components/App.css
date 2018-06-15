@@ -1,0 +1,44 @@
+.htmlWrapper {
+    width: 90%;
+    min-width: 600px;
+    background: #fff;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+nav {
+    height: 30px;
+    background: #283b91;
+    width: 100%;
+    padding: 0 10% 0 0;
+    line-height: 30px;
+}
+
+nav button {
+    height: 30px;
+    border: 0;
+    background: #283b91;
+    outline: none;
+    color: #fff;
+    float: right;
+}
+
+nav button:active {
+    border: 0;
+    outline: none;
+}
+
+nav button i {
+    font-size: 18px !important;
+    vertical-align: text-bottom;
+}
+
+.htmlContainer {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.badge {
+    background: red;
+    border: 1px solid white;
+}

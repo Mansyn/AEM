@@ -1,0 +1,84 @@
+// ------------------------------------------------------------------------
+//
+//  GLOBAL
+//
+//  This file is intended to be included one time at the root level
+//  of a site/application.  
+//
+//  Content is placed in this file to avoid scenarios where resources
+//  are loaded multiple times resulting in bloated CSS or multiple
+//  downloads
+//
+//  Any shared variables or mixins belong partials, ie: _variables.scss
+//
+// ------------------------------------------------------------------------
+
+//  =======================================================================
+//
+//  FONTS
+//
+//  =======================================================================
+
+// Roboto Thin
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  src: url('./../resources/fonts/roboto/Roboto-100.woff2') format('woff2'), url('./../resources/fonts/roboto/Roboto-100.woff') format('woff');
+}
+
+// Roboto Light
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: url('./../resources/fonts/roboto/Roboto-300.woff2') format('woff2'), url('./../resources/fonts/roboto/Roboto-300.woff') format('woff');
+}
+
+// Roboto Regular
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./../resources/fonts/roboto/Roboto-regular.woff2') format('woff2'), url('./../resources/fonts/roboto/Roboto-regular.woff') format('woff');
+}
+
+// Roboto Regular Italic
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('./../resources/fonts/roboto/Roboto-italic.woff2') format('woff2'), url('./../resources/fonts/roboto/Roboto-italic.woff') format('woff');
+}
+
+// Roboto Bold
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./../resources/fonts/roboto/Roboto-700.woff2') format('woff2'), url('./../resources/fonts/roboto/Roboto-700.woff2') format('woff');
+}
+
+// Roboto Bold Italic
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: url('./../resources/fonts/roboto/Roboto-700italic.woff2') format('woff2'), url('./../resources/fonts/roboto/Roboto-700italic.woff') format('woff');
+}
+
+
+//  =======================================================================
+//
+//  PAGE DEFAULTS
+//
+//  =======================================================================
+@import 'normalizer';
+@import 'typography';
+
+body {
+  @include set-font(); // Robato Regular
+  @include set-font-scale(body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

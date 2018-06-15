@@ -1,0 +1,85 @@
+@import '../scss/variables';
+@import '../scss/typography';
+@import '../scss/utils';
+
+// Local Variables
+$primary-btn-color: $blue-violet;
+$secondary-btn-color: $lavender;
+$over-btn-color: $sky-blue;
+$down-btn-color: $black;
+$disabled-btn-color: $light-gray;
+
+.usaf-btn {
+  @include set-font($weight: bold);
+  border-style: solid;
+  border-width: calc-rem(2px);
+  cursor: pointer;
+  display: inline-block;
+  font-size: calc-rem(14px);
+  min-width: calc-rem(74px);
+  padding: calc-rem(5px 20px);
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $over-btn-color;
+    border-color: $over-btn-color;
+  }
+
+  &:active {
+    background-color: $down-btn-color;
+    border-color: $down-btn-color;
+  }
+
+  &[disabled] {
+    background-color: $disabled-btn-color;
+    border-color: $disabled-btn-color;
+  }
+}
+
+.usaf-btn--primary {
+  background: $primary-btn-color;
+  border-color: $primary-btn-color;
+  color: $white;
+}
+
+.usaf-btn--secondary {
+  background: $secondary-btn-color;
+  border-color: $secondary-btn-color;
+  color: $white;
+}
+
+.usaf-btn--tertiary {
+  background: transparent;
+  border-color: $primary-btn-color;
+  color: $primary-btn-color;
+
+  &:hover {
+    background: transparent;
+    color: $over-btn-color;
+  }
+
+  &:active {
+    color: $down-btn-color;
+  }
+
+  &[disabled] {
+    background: transparent;
+    color: $disabled-btn-color;
+  }
+}
+
+.usaf-btn--icon {
+  background-color: transparent;
+  border: none;
+  min-width: 0;
+
+  &:hover,
+  &:active,
+  &[disabled] {
+    background-color: transparent;
+  }
+
+  &[disabled] {
+    opacity: 0.75;
+  }
+}

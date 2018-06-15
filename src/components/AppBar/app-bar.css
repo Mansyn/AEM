@@ -1,0 +1,29 @@
+.usaf-app-bar {
+  background-color: #f1f1f1; }
+  .usaf-app-bar .usaf-app-bar__content {
+    margin: 0 auto;
+    max-width: 75rem;
+    padding: 0.3125rem;
+    position: relative; }
+    .usaf-app-bar .usaf-app-bar__content.usaf-app-bar--bottom {
+      margin-bottom: 0.3125rem; }
+    .usaf-app-bar .usaf-app-bar__content.usaf-app-bar--bottom::after {
+      background-color: #494949;
+      bottom: -0.3125rem;
+      content: '';
+      display: block;
+      height: 0.3125rem;
+      left: 0;
+      position: absolute;
+      width: 100%; }
+    .usaf-app-bar .usaf-app-bar__content.usaf-app-bar--top {
+      margin-top: 0.3125rem; }
+    .usaf-app-bar .usaf-app-bar__content.usaf-app-bar--top::before {
+      background-color: #494949;
+      content: '';
+      display: block;
+      height: 0.3125rem;
+      left: 0;
+      position: absolute;
+      top: -0.3125rem;
+      width: 100%; }

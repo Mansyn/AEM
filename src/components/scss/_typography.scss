@@ -1,0 +1,121 @@
+// #######################################################################
+//
+// TYPOGRAPHY
+// 
+// Utilities and variables to set font sizes within USAF components and
+// applications
+//
+// #######################################################################
+@import 'utils';
+
+// ------------------------------------------------------------------------
+//
+//  VARIABLES
+//
+// ------------------------------------------------------------------------
+
+// Fonts -- Roboto is a Google Font loaded via base.scss
+$sans-serif: (
+  family: ('Roboto', Helvetica, sans-serif),
+  thin: 100,
+  light: 300,
+  regular: 400,
+  bold: 700
+);
+
+// Heading sizes/Typography Scale
+$font-scale: (
+  body: (
+    font-size: calc-rem(16px),
+    line-height: 1.25
+  ),
+  h1: ( 
+    font-size: calc-rem(36px),
+    line-height: 1.5
+  ),
+  h2: (
+    font-size: calc-rem(30px),
+    line-height: 1.5
+  ),
+  h3: (
+    font-size: calc-rem(28px),
+    line-height: 1.25
+  ),
+  h4: (
+    font-size: calc-rem(26px),
+    line-height: 1.25
+  ),
+  h5: (
+    font-size: calc-rem(24px),
+    line-height: 1.25
+  )
+);
+
+
+
+// ------------------------------------------------------------------------
+//
+//  FUNCTIONS + MIXINS
+//
+// ------------------------------------------------------------------------
+
+
+// ------------------------------------------------------------------------
+// set-font
+// 
+// Returns the styles for font-family and font-weight based off the
+// font stack and weight passed in.  
+// Font weight defaults to 'regular' and font stack to $sans-serif
+//
+// example: 
+//  @include set-font(); 
+//  @include set-font($sans-serif, bold);
+// ------------------------------------------------------------------------
+@mixin set-font($font-stack: $sans-serif, $weight: regular) {
+  font-family: map-get($font-stack, family);
+  font-weight: map-get($font-stack, $weight);
+}
+
+
+// ------------------------------------------------------------------------
+// set-font-scale
+// 
+// Returns the styles for font-size and line-height based off the size
+// passed in. Defaults to 'body'. 
+//
+// example: 
+//  @include set-font-scale();
+//  @include set-font-scale(h1);
+// ------------------------------------------------------------------------
+@mixin set-font-scale($size: body) {
+  font-size: get-font-size($size);
+  line-height: get-line-height($size);
+}
+
+
+// ------------------------------------------------------------------------
+// get-font-size
+// 
+// Returns the value for font-size (in rem) from the font-scale based off
+// the size passed in. Can be used to set font size w/ custom line height
+//
+// example: 
+//  font-size: get-font-size(h1);
+// ------------------------------------------------------------------------
+@function get-font-size($size) {
+  @return map-get(map-get($font-scale, $size), font-size);
+}
+
+
+// ------------------------------------------------------------------------
+// get-line-height
+// 
+// Returns the value for line-height from the font-scale based off
+// the size passed in. Can be used to set line height w/ custom font size
+//
+// example: 
+//  font-size: get-line-height(h3);
+// ------------------------------------------------------------------------
+@function get-line-height($size) {
+  @return map-get(map-get($font-scale, $size), line-height);
+}

@@ -1,0 +1,8 @@
+.usaf-dropdown-menu__trigger {
+  cursor: pointer; }
+
+.usaf-dropdown-menu__dropdown {
+  position: absolute;
+  background-color: #ffffff;
+  border: 0.0625rem solid #c5c8cb;
+  box-shadow: 0.0625rem 0.0625rem 0.625rem 0.0625rem #c5c8cb; }

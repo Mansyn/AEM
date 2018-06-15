@@ -1,0 +1,96 @@
+@import '../scss/variables';
+@import '../scss/utils';
+ 
+// -------------------------------------------
+//   
+//  The loading stripe, being a 50* angle,
+//  requires some math which 45* does not.
+//
+//  To time the scrolling animation we need
+//  to know the full size created by 1 "tile"
+//  of the stripe.
+//  
+//  The width of the gradient ($stripe-box) bisects
+//  the largest triangle and creates a hypotenuse
+//  the size of $stripe-box.
+//  
+//  This triangle must be subdivided to figure
+//  out the the full triangle's sides.
+//
+//  We can calculate sides A & B of with hypotenuse
+//  ($stripe-box) & the inner angle of 40*.
+//
+//  Side B and the angle 50* calculates side K.
+//
+//  The sum of A & K is the width of our tile (W). 
+//  
+//  The tile height (H) is calculated with W & 50*
+//
+//   |\
+//   |  \
+//   |    \
+//   |      \
+//   |        \
+//   |          \
+//   |            \
+// H |              \
+//   | $stripe-box/ | \
+//   |          /   |   \
+//   |        /     |     \
+//   | 50*  /       |       \
+//   |    /         | B       \
+//   |  /           |           \
+//   |/  40*        |         50* \ 
+//    ______________________________ \
+//           A              K
+//               A + K = W
+// ------------------------------------------- 
+
+// Size of the stipe pattern
+$stripe-box: 90px;
+// Ratio of color to blank space
+$stripe-size: .7;
+
+// Calculated trig values
+$tan50: 1.19175;
+$cos40: .7660444;
+$sin40: .6427876;
+
+// See comments above
+$sideA: $cos40 * $stripe-box;
+$sideB: $sin40 * $stripe-box;
+
+$sideK: $sideB / $tan50;
+
+$sideW: $sideK + $sideA;
+$sideH: $sideW * $tan50;
+
+.usaf-loading-stripes {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  
+  background-image: repeating-linear-gradient(
+    -50deg,
+    $lighter-gray 0,
+    $lighter-gray  $stripe-box * $stripe-size, 
+    transparent $stripe-box * $stripe-size,
+    transparent $stripe-box
+  );
+
+  background-size: $sideW $sideH;
+  animation: stripes 1s linear infinite;
+}
+
+.usaf-loading-stripes--progress {
+  // Reset right position so
+  // width can be calculated as a percentage
+  right: auto;
+}
+
+@keyframes stripes {
+  from { background-position: 0 0; }
+  to   { background-position: -$sideW 0; }
+}

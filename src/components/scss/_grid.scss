@@ -1,0 +1,38 @@
+@import '~bourbon-neat/core/neat';
+@import 'variables';
+
+// ------------------------------------------------------------------------
+//
+//  Grid Settings
+//
+//  The option exists here to create a different sized grid (# of cols)
+//  for different devices based on design requirements which are TBD
+//
+// ------------------------------------------------------------------------
+$neat-grid: (
+  columns: 12,
+  gutter: 20px,
+);
+
+$tablet-neat-grid: (
+  media: '#{$mq-medium-only}',
+);
+
+$mobile-neat-grid: (
+  media: '#{$mq-small-only}',
+);
+
+
+// ------------------------------------------------------------------------
+//
+//  page-container
+//
+//  Utility mixin to create a top level row container to keep columns
+//  within max width
+//
+// ------------------------------------------------------------------------
+@mixin page-container {
+  @include grid-container;
+  margin: 0 auto;
+  max-width: $app-max-width;
+}

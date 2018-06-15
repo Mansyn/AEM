@@ -1,0 +1,20 @@
+@import '../scss/variables';
+@import '../scss/utils';
+@import '../scss/typography';
+
+.usaf-loading-modal__window {
+  max-width: none;
+  min-width: calc-rem(550px);
+  height: calc-rem(150px);
+}
+
+.usaf-loading-modal__content {
+  position: absolute;
+  top: 50%;
+  left: calc-rem(50px);
+  transform: translateY(-50%);
+  margin: 0;
+  font-style: italic;
+  color: $color-body;
+  @include set-font-scale(h1);
+}

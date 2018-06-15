@@ -1,0 +1,18 @@
+.usaf-input {
+  background: #f1f1f1;
+  border: 0.0625rem solid #f1f1f1;
+  color: #494949;
+  display: block;
+  font-size: 0.875rem;
+  padding: 0.625rem;
+  transition: background-color ease-out 0.1s;
+  width: 100%; }
+  .usaf-input:focus {
+    background-color: #ffffff;
+    border: 0.0625rem solid #283b91;
+    box-shadow: none;
+    outline: none; }
+  .usaf-input:disabled {
+    background-color: #c5c8cb;
+    box-shadow: none;
+    cursor: not-allowed; }

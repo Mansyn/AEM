@@ -1,0 +1,19 @@
+.usaf-icon {
+  display: inline-block;
+  height: 1em;
+  line-height: 1;
+  overflow: hidden; }
+
+.usaf-icon__svg {
+  fill: currentColor;
+  height: 1em;
+  width: 1em; }
+
+.usaf-icon--primary {
+  color: #283b91; }
+
+.usaf-icon--secondary {
+  color: #aab7ee; }
+
+.usaf-icon--tertiary {
+  color: #0ebdf6; }

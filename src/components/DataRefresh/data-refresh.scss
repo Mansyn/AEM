@@ -1,0 +1,9 @@
+//Import global vars/mixins
+@import '../scss/variables';
+@import '../scss/utils';
+
+.usaf-data-refresh {
+  text-align: right;
+  font-size: calc-rem(14px);
+  color: $dark-gray;
+}
